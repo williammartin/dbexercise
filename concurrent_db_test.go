@@ -1,4 +1,4 @@
-package fungo_test
+package dbexercise_test
 
 import (
 	"math/rand"
@@ -8,15 +8,15 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	"github.com/williammartin/fungo"
+	"github.com/williammartin/dbexercise"
 )
 
 var _ = Describe("InMemoryDB Concurrent Safe", func() {
 
-	var inMemory *fungo.ConcurrentInMemoryDB
+	var inMemory *dbexercise.ConcurrentInMemoryDB
 
 	BeforeEach(func() {
-		inMemory = fungo.NewConcurrentInMemoryDB()
+		inMemory = dbexercise.NewConcurrentInMemoryDB()
 	})
 
 	It("stores key value mappings", func() {
@@ -36,8 +36,8 @@ var _ = Describe("InMemoryDB Concurrent Safe", func() {
 	It("serialises concurrent operations", func() {
 		wg := &sync.WaitGroup{}
 		for i := 0; i < 10; i++ {
+			wg.Add(1)
 			go func() {
-				wg.Add(1)
 				val := String(10)
 				inMemory.Set("foo", val)
 

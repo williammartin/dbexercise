@@ -1,4 +1,4 @@
-package fungo_test
+package dbexercise_test
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func TestFungo(t *testing.T) {
+func TestDbexercise(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "Fungo Suite")
+	RunSpecs(t, "Dbexercise Suite")
 }

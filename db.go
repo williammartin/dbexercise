@@ -1,4 +1,4 @@
-package fungo
+package dbexercise
 
 import "errors"
 

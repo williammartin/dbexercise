@@ -1,18 +1,18 @@
-package fungo_test
+package dbexercise_test
 
 import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	"github.com/williammartin/fungo"
+	"github.com/williammartin/dbexercise"
 )
 
 var _ = Describe("InMemoryDB", func() {
 
-	var inMemory *fungo.InMemoryDB
+	var inMemory *dbexercise.InMemoryDB
 
 	BeforeEach(func() {
-		inMemory = fungo.NewInMemoryDB()
+		inMemory = dbexercise.NewInMemoryDB()
 	})
 
 	It("stores key value mappings", func() {
